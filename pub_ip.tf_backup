@@ -1,0 +1,11 @@
+resource "azurerm_public_ip" "myterraformpublicip" {
+    for_each                     = toset
+    name                         = "myPublicIP"
+    location                     = var.location
+    resource_group_name          = "rg-metro-digital-rig" //azurerm_resource_group.rg.name
+    allocation_method            = "Dynamic"
+
+    tags = {
+        environment = "Terraform Demo"
+    }
+}
