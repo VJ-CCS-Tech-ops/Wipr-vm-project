@@ -1,25 +1,30 @@
+
+
 variable "vmname"{
-  description = "name of the digitalrig vm"
-  type = list(string)
-  default = ["rigcorree","woorkflowtestingvm"]
-}
-
-variable "location"{
-  type = string
-  default = "southindia"
-}
-
-variable "imagename"{
   description = "name of the image"
   type = list(string)
-  default = ["DB1AMI","DB2AMI"]
+  default = ["vm1","vm2"]
 }
 
-variable "vmimage" {
-  description = “Variable for defining each instance”
-  type = map(string)
-  default = {
-    rigcorree = DB1AMI
-    woorkflowtestingvm = DB2AMI
-  }
+variable "size"{
+  description = "name of the image"
+  type = list(string)
+  default = ["Standard_F2","Standard_DS1_v2"]
+
 }
+/*
+
+variable "size"{
+  type = map(object({
+    effect = string
+
+   vmname1 = {
+    "size"= "Standard_F2"
+
+  }
+  vmname2 = {
+    "size" = "Standard_DS1_v2"
+  }
+  })
+}
+*/
